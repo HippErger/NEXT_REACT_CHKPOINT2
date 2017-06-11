@@ -32,6 +32,4 @@ Vehicle.propTypes = {
   resultData: PropTypes.object
 };
 
-
-
 export default Vehicle;

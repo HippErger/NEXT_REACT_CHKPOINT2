@@ -1,15 +1,18 @@
 import React from 'react';
 // import Link from 'next/link';
 // import VehiclesContainer from '../containers/Vehicles_Container';
-// import withRedux from 'next-redux-wrapper';
-// import {initStore} from '../store';
+import withRedux from 'next-redux-wrapper';
+import {initStore} from '../store';
+import VehicleContainer from '../containers/VehicleContainer';
+// import Header from '../components/Header';
 
 function singlevehicle() {
   return (
     <div>
-      <h4>this is the single vehicles page</h4>
+      <h4>the single vehicles page</h4>
+      <VehicleContainer />
     </div>
   );
 }
 
-export default singlevehicle;
+export default withRedux(initStore, null, null)(singlevehicle);

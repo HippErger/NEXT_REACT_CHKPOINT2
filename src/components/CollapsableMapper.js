@@ -3,9 +3,6 @@ import Link from 'next/link';
 // {'/' + this.props.path + '/' + d._id}
 import PropTypes from 'prop-types';
 
-// importComment from './Comment';
-//  <Comment />
-
 class CollapsableMapper extends Component {
   constructor() {
     super();
