@@ -12,10 +12,10 @@ Install all dependencies running `yarn`
 Run the dev server via `yarn start`
 
 ### Setup
-* Create a new repository on github, clone it onto your maching
-* Download (not clone) the files from the repository https://github.com/AustinCodingAcademy/advanced-nextjs-express-starter and copy them into your new project. Make sure all the files are at the top level. So inside of your folder you should have the .eslint, package.json etc on the very top level
-* yarn install, yarn start
-* Donâ€™t use this readme to figure out what code to type
+* X--Create a new repository on github, clone it onto your maching
+* X--Download (not clone) the files from the repository https://github.com/AustinCodingAcademy/advanced-nextjs-express-starter and copy them into your new project. Make sure all the files are at the top level. So inside of your folder you should have the .eslint, package.json etc on the very top level
+* X--yarn install, yarn start
+* X--Donâ€™t use this readme to figure out what code to type
 * Use all other projects we have done as code examples
 * Pick a real life thing to use as a model. Vehicle, Product, Movie â€¦etc
 * Implement 5 properties for this model.
