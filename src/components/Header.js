@@ -13,16 +13,16 @@ function Header() {
       <a>Vehicles</a>
     </Link>
     &nbsp; &nbsp;
-    <Link href="/signUpPage">
-      <a>Sign-Up</a>
+    <Link href="/">
+      <a>Comments</a>
     </Link>
     &nbsp; &nbsp;
-    <Link href="/signInPage">
-    <a>Log In</a>
+    <Link href="/">
+    <a>Contacts</a>
     </Link>
     &nbsp; &nbsp;
-    <Link href="/logOutPage">
-      <a>Log Out</a>
+    <Link href="/">
+      <a>Products</a>
     </Link>
     </div>
   );
