@@ -5,7 +5,8 @@ import Link from 'next/link';
 
 We're going to create a stateless array and pass it to this page with a container
 
-and inside this page I will put in components like Vehicles that contains a collapsible mapper that contains a vehicle component for each item in the array. 
+and inside this page I will put in components like Vehicles that contains a
+collapsible mapper that contains a vehicle component for each item in the array.
 */
 
 function VehiclesPage() {
@@ -14,7 +15,7 @@ function VehiclesPage() {
   if (!vehicle) {
     return (
       <div>
-        <h4>Vehicle not found</h4>
+        <h4>No vehicles found</h4>
         <Link href="/">
           <button>Home</button>
         </Link>
