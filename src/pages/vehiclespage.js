@@ -1,5 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
+import VehiclesContainer from '../containers/Vehicles_Container';
+import withRedux from 'next-redux-wrapper';
+import {initStore} from '../store';
 
 /* When you get back Clayton, just remember that the Express Practice has these examples.
 
@@ -16,6 +19,7 @@ function VehiclesPage() {
     return (
       <div>
         <h4>No vehicles found</h4>
+        <VehiclesContainer />
         <Link href="/">
           <button>Home</button>
         </Link>
@@ -38,7 +42,7 @@ function VehiclesPage() {
   );
 }
 
-export default VehiclesPage;
+export default withRedux(initStore, null, null)(VehiclesPage);
 
 // return (
 //   <div>

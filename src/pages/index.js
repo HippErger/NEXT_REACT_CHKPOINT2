@@ -1,6 +1,8 @@
 import React from 'react';
-import Link from 'next/link';
+// import Link from 'next/link';
 import Header from '../components/Header';
+import withRedux from 'next-redux-wrapper';
+import {initStore} from '../store';
 
 function IndexPage() {
   return (
@@ -9,14 +11,11 @@ function IndexPage() {
       <h1>
         Hello World
       </h1>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
     </div>
   );
 }
 
-export default IndexPage;
+export default withRedux(initStore, null, null)(IndexPage);
 
 /*
 import React, {Component} from 'react';
