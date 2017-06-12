@@ -1,4 +1,4 @@
-/* import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const vehicleSchema = mongoose.Schema({
   imgUrl: String,
@@ -13,4 +13,4 @@ const vehicleSchema = mongoose.Schema({
   newCar: Boolean
 });
 
-export default mongoose.model("Vehicle", vehicleSchema);*/
+export default mongoose.model('Vehicle', vehicleSchema);

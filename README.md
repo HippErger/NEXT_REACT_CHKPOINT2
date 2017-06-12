@@ -106,3 +106,28 @@ Run the dev server via `yarn start`
 
 ## Bonus
 * Create the edit component by reusing the create component
+
+<!--  
+https://www.youtube.com/watch?v=LaP1W7VDClg
+Ivo- app video
+intro: 0:00 - 1:40
+Setup 1:40 - 2:10
+GitNewRepo 2:10
+  cut out mistakes at 5:10ish
+StartWithBackend 6:50
+Build folders 7:40
+First Router 8:20
+PostManTest 14:30
+RouterCommit 16:26
+CreateControllerFile 16:55 (18:00)
+CreateModel 26:20
+OpenRoboMongo 28:11
+AddMongoose 29:10
+BackToCreatingModel 33:55
+SchemaValidation 34:25
+  --add in change for lenght to length
+ImplementModelinController 43:55
+BodyParser 46:00
+
+
+-->

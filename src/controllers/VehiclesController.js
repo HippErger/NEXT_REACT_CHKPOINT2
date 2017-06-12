@@ -1,4 +1,4 @@
-/*import VehicleModel from "../models/VehicleModel";
+import VehicleModel from '../models/VehicleModel';
 
 const VehicleController = {
   create: (request, response, next) => {
@@ -6,10 +6,10 @@ const VehicleController = {
 
     addedVehicle.save()
       .then(() => {
-        console.log("New vehicle saved");
+        console.log('New vehicle saved');
         return response.json(addedVehicle);
       })
-      .catch((err) => {
+      .catch(err => {
         return next(err);
       });
   },
@@ -17,8 +17,8 @@ const VehicleController = {
   list: (request, response, next) => {
     VehicleModel.find({}).exec()
       .then(data => {
-        console.log("Vehicle DB fetched");
-        return response.json(data);
+        console.log('Vehicle DB fetched', data);
+        return response.json('we receieved your get request');
       })
       .catch(err => {
         return next(err);
@@ -29,8 +29,8 @@ const VehicleController = {
     const query = request.params.id;
 
     VehicleModel.findById(query)
-      .then((data) => {
-        console.log("Vehicle DB individual was requested");
+      .then(data => {
+        console.log('Vehicle DB individual was requested');
         return response.json(data);
       })
       .catch(err => {
@@ -53,7 +53,7 @@ const VehicleController = {
         data.fuel = itemBody.fuel || data.fuel;
         data.city = itemBody.city || data.city;
 
-        console.log("Vehicle ", request.params.id, " was updated");
+        console.log('Vehicle ', request.params.id, ' was updated');
         return data.save();
       })
         .then(data => {
@@ -69,7 +69,7 @@ const VehicleController = {
 
     VehicleModel.findByIdAndRemove(query).exec()
       .then(data => {
-        console.log("Vehicle ", query, "was deleted");
+        console.log('Vehicle ', query, 'was deleted');
         return response.json(data);
       })
       .catch(err => {
@@ -78,4 +78,4 @@ const VehicleController = {
   }
 };
 
-export default VehicleController;*/
+export default VehicleController;
