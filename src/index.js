@@ -1,18 +1,18 @@
 import next from 'next';
 import path from 'path';
 import express from 'express';
-import VehicleRouter from './routers/VehicleRouter';
+// import VehicleRouter from './routers/VehicleRouter';
 import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
+// import bodyParser from 'body-parser';
 
 const dev = process.env.NODE_ENV !== 'production';
-// const handle = nextApp.getRequestHandler();
-const PORT = 3001;
+
 const nextApp = next({
   dev,
   dir: path.resolve(__dirname)
 });
-
+const handle = nextApp.getRequestHandler();
+const PORT = 3001;
 
 
 // this promise must be global so mongoose can use it with DB and in here
@@ -31,16 +31,13 @@ nextApp.prepare().then(() => {
   const app = express();
 
   // Define all you backend handlers here...
-  app.use(bodyParser.json());
-  app.use(VehicleRouter);
-  // app.get(PATH_NAME + '/vehicles', (request, response) => {
-  //   return response.json('got the vehicle we wanted!');
-  // });
+  // app.use(bodyParser.json());
+  // app.use(VehicleRouter);
+  // Handle everything that is not covered in above routes with next.js
 
-  // // Handle everything that is not covered in above routes with next.js
-  // app.get('*', (request, response) => {
-  //   return handle(request, response);
-  // });
+  app.get('*', (request, response) => {
+    return handle(request, response);
+  });
 
   app.listen(PORT, () => {
     // eslint-disable-next-line

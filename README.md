@@ -128,6 +128,11 @@ SchemaValidation 34:25
   --add in change for lenght to length
 ImplementModelinController 43:55
 BodyParser 46:00
+MongooseValidation Errors 51:30
+FixErrorDetection 55:49
+MongooseGlobalPromis 59:35
+ErrorHandlingMiddleware 60:00
+TimeZone  1:07:30
 
 
 -->
