@@ -17,8 +17,8 @@ const VehicleController = {
   list: (request, response, next) => {
     VehicleModel.find({}).exec()
       .then(data => {
-        console.log('Vehicle DB fetched', data);
-        return response.json('we receieved your get request');
+        console.log('Vehicle DB fetched');
+        return response.json(data);
       })
       .catch(err => {
         return next(err);
@@ -30,7 +30,7 @@ const VehicleController = {
 
     VehicleModel.findById(query)
       .then(data => {
-        console.log('Vehicle DB individual was requested');
+        console.log('Vehicle DB, individual was requested,');
         return response.json(data);
       })
       .catch(err => {
