@@ -1,9 +1,9 @@
 import next from 'next';
 import path from 'path';
 import express from 'express';
-// import VehicleRouter from './routers/VehicleRouter';
+import VehicleRouter from './routers/VehicleRouter';
 import mongoose from 'mongoose';
-// import bodyParser from 'body-parser';
+import bodyParser from 'body-parser';
 
 const dev = process.env.NODE_ENV !== 'production';
 
@@ -31,10 +31,10 @@ nextApp.prepare().then(() => {
   const app = express();
 
   // Define all you backend handlers here...
-  // app.use(bodyParser.json());
-  // app.use(VehicleRouter);
-  // Handle everything that is not covered in above routes with next.js
+  app.use(bodyParser.json());
+  app.use(VehicleRouter);
 
+  // Handle everything that is not covered in above routes with next.js
   app.get('*', (request, response) => {
     return handle(request, response);
   });
