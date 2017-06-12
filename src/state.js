@@ -1,4 +1,9 @@
 export default {
+  vehicles: []
+};
+
+ /*
+export default {
   vehicles: [ {
     _id: 1,
     imgURL: './featured-img-1.jpg',
@@ -83,3 +88,4 @@ export default {
       postId: 1
     } ]
 };
+*/
