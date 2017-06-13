@@ -1,40 +1,42 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Link from 'next/link';
 import VehiclesContainer from '../containers/Vehicles_Container';
 import withRedux from 'next-redux-wrapper';
 import {initStore} from '../store';
 import Header from '../components/Header';
 
-/* When you get back Clayton, just remember that the Express Practice has these examples.
-
-We're going to create a stateless array and pass it to this page with a container
-
-and inside this page I will put in components like Vehicles that contains a
-collapsible mapper that contains a vehicle component for each item in the array.
-*/
-
-function VehiclesPage() {
+class VehiclesPage extends Component {
+  constructor() {
+    super();
+    this.state = {
+      
+    };
+  }
   // const vehicle = props.resultData;
-  const vehicle = undefined;
-  if (!vehicle) {
+  // const vehicle = 1;
+  // @TODO the vehicle in this if statement needs to be props, not a const
+  render() {
+    if (this.state.vehicle) {
+      return (
+        <div>
+          <Header />
+          <VehiclesContainer />
+          <Link href="/">
+            <button>Home</button>
+          </Link>
+        </div>
+      );
+    }
     return (
       <div>
-        <VehiclesContainer />
+        <Header />
+        <h4>No vehicles found</h4>
         <Link href="/">
           <button>Home</button>
         </Link>
       </div>
     );
   }
-  return (
-    <div>
-      <Header />
-      <h4>No vehicles found</h4>
-      <Link href="/">
-        <button>Home</button>
-      </Link>
-    </div>
-  );
 }
 
 export default withRedux(initStore, null, null)(VehiclesPage);
