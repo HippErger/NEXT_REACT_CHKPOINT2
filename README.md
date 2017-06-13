@@ -36,7 +36,7 @@ Run the dev server via `yarn start`
     * onSubmit call an action called createThing(change it to make sense for your model) Remember to connect this via mapDispatchToProps etc.
 * Create a page with a class based component that shows details of one thing (UserDetail)
     * Use a prop that has the array of your models
-    * Use a parameter from the route path ?id=<id> to find the model to show (See Routing secion for more details)
+    * Use a parameter from the route path ?id=<id> to find the model to show (See Routing section for more details)
     * Use whatever html you want to show all of the properties of your thing
 * Loading data
     * Trigger the loading of data inside componentDidMount of the pages, call loadThings
@@ -136,3 +136,67 @@ TimeZone  1:07:30
 
 
 -->
+
+<!--
+class VehiclesPage extends Component {
+  constuctor() {
+    super();
+    this.state = {
+      vehicle: 0
+    };
+  }
+// http://localhost:3001/api/vehicles
+  componentDidMount() {
+  //   VehiclesPage.getInitialProps = async ({ request }) => {
+  //     const response = await fetch('https://localhost:3001/api/vehicles');
+  //     const json = await response.json();
+  //     return {
+  //       vehicle: json.vehicles
+  //     };
+  //   };
+  }
+
+  render() {
+    if (!this.state.vehicle) {
+      return (
+        <div>
+          <Header />
+          <h4>No vehicles found</h4>
+          <VehiclesContainer />
+          <Link href="/">
+            <button>Home</button>
+          </Link>
+        </div>
+      );
+    }
+    return (
+      <div>
+        <h4>{this.state.vehicle.make}</h4>
+        <ul>
+          <li>{this.state.vehicle.model}</li>
+          <li>{this.state.vehicle.year}</li>
+          <li>{this.state.vehicle.miles}</li>
+          <li>{this.state.vehicle.price}</li>
+        </ul>
+        <Link href="/">
+          <button>Home</button>
+        </Link>
+      </div>
+    );
+  }
+}
+
+export default withRedux(initStore, null, null)(VehiclesPage);
+
+/*
+const Page = ({ stars }) => <div>Next stars: {stars}</div>
+
+Page.getInitialProps = async ({ req }) => {
+  const res = await fetch('https://api.github.com/repos/zeit/next.js')
+  const json = await res.json()
+  return { stars: json.stargazers_count }
+}
+
+export default Page
+*/
+ -->

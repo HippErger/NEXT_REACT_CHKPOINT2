@@ -3,6 +3,7 @@ import Link from 'next/link';
 import VehiclesContainer from '../containers/Vehicles_Container';
 import withRedux from 'next-redux-wrapper';
 import {initStore} from '../store';
+import Header from '../components/Header';
 
 /* When you get back Clayton, just remember that the Express Practice has these examples.
 
@@ -14,11 +15,10 @@ collapsible mapper that contains a vehicle component for each item in the array.
 
 function VehiclesPage() {
   // const vehicle = props.resultData;
-  const vehicle = 0;
+  const vehicle = undefined;
   if (!vehicle) {
     return (
       <div>
-        <h4>No vehicles found</h4>
         <VehiclesContainer />
         <Link href="/">
           <button>Home</button>
@@ -28,13 +28,8 @@ function VehiclesPage() {
   }
   return (
     <div>
-      <h4>{vehicle.make}</h4>
-      <ul>
-        <li>{vehicle.model}</li>
-        <li>{vehicle.year}</li>
-        <li>{vehicle.miles}</li>
-        <li>{vehicle.price}</li>
-      </ul>
+      <Header />
+      <h4>No vehicles found</h4>
       <Link href="/">
         <button>Home</button>
       </Link>
@@ -44,11 +39,14 @@ function VehiclesPage() {
 
 export default withRedux(initStore, null, null)(VehiclesPage);
 
-// return (
-//   <div>
-//     <h3>This is the vehicles page</h3>
-//     <Link href="/">
-//       <button>Home</button>
-//     </Link>
-//   </div>
-// );
+/*
+const Page = ({ stars }) => <div>Next stars: {stars}</div>
+
+Page.getInitialProps = async ({ req }) => {
+  const res = await fetch('https://api.github.com/repos/zeit/next.js')
+  const json = await res.json()
+  return { stars: json.stargazers_count }
+}
+
+export default Page
+*/

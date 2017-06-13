@@ -1,8 +1,6 @@
-export default {
-  vehicles: []
-};
-
- /*
+// export default {
+//   vehicles: []
+// };
 export default {
   vehicles: [ {
     _id: 1,
@@ -88,4 +86,3 @@ export default {
       postId: 1
     } ]
 };
-*/
