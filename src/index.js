@@ -39,6 +39,15 @@ nextApp.prepare().then(() => {
     return handle(request, response);
   });
 
+  // Error handling middleware
+  // @TODO remove disable
+  // eslint-disable-next-line
+  app.use('*', (err, request, response, nexthandler) => {
+    return response.status(500).json({
+      message: err.message
+    });
+  });
+
   app.listen(PORT, () => {
     // eslint-disable-next-line
     console.log('Server listening on port ' + PORT);

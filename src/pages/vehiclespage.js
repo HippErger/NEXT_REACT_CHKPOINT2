@@ -4,13 +4,49 @@ import VehiclesContainer from '../containers/Vehicles_Container';
 import withRedux from 'next-redux-wrapper';
 import {initStore} from '../store';
 import Header from '../components/Header';
+// import {
+//   loadVehicles,
+//
+// } from '../actions';
 
 class VehiclesPage extends Component {
   constructor() {
     super();
     this.state = {
-      
+
     };
+  }
+/*
+list: (request, response, next) => {
+  VehicleModel.find({}).exec()
+    .then(data => {
+      console.log('Vehicle DB fetched');
+      return response.json(data);
+    })
+    .catch(err => {
+      return next(err);
+    });
+}
+*/
+  componentDidMount() {
+    // loadVehicles();
+  //   function mapDispatchToProps(dispatch) {
+  // return {
+  //   createProduct: (product) => {
+  //     dispatch(createProduct(product));
+  //   },
+  //   createVehicle: (v) => {
+  //     dispatch(createVehicle(v));
+  //   },
+  //   createContact: (contact) => {
+  //     dispatch(createContact(contact));
+  //   },
+  //   createComment: (c) => {
+  //     dispatch(createComment(c));
+  //   },
+  // };
+// }
+
   }
   // const vehicle = props.resultData;
   // const vehicle = 1;
@@ -39,7 +75,7 @@ class VehiclesPage extends Component {
   }
 }
 
-export default withRedux(initStore, null, null)(VehiclesPage);
+export default withRedux(initStore, null, mapDispatchToProps)(VehiclesPage);
 
 /*
 const Page = ({ stars }) => <div>Next stars: {stars}</div>
