@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 // import Link from 'next/link';
 // import VehiclesContainer from '../containers/Vehicles_Container';
 import withRedux from 'next-redux-wrapper';
@@ -9,10 +9,12 @@ import {initStore} from '../store';
 //
 // } from '../actions';
 
-function vehiclesPage() {
-  return (
-    <h3>This is the VehiclesPage</h3>
-  );
+class vehiclesPage extends Component {
+  render() {
+    return (
+      <h3>This is the VehiclesPage</h3>
+    );
+  }
 }
 
 export default withRedux(initStore, null, null)(vehiclesPage);

@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-
+import vehicleList from './vehicleList';
 
 // @TODO: remove overrides
 /* eslint-disable no-unused-vars */
@@ -32,34 +32,35 @@ import {combineReducers} from 'redux';
 //     list: null
 //   }
 // };
-
-import {
-  VEHICLES_LOADED,
-  ONE_VEHICLE_LOADED
-} from '../actions';
+//
+// import {
+//   VEHICLES_LOADED,
+//   ONE_VEHICLE_LOADED
+// } from '../actions';
 
 // const rootReducer = (state = 0) => {
 //   return state;
 // };
 
-function vehicles(state = [], action) {
-  if (action.type === VEHICLES_LOADED) {
-    console.log('Vehicles reducers is working', action.value);
-    return action.value;
-  }
-  return state;
-}
-
-function vehicle(state = {}, action) {
-  if (action.type === ONE_VEHICLE_LOADED) {
-    console.log('single vehicle reducers is working', action.value);
-    return action.value;
-  }
-  return state;
-}
-
-const rootReducer = combineReducers({
-  vehicles, vehicle
+// function vehicles(state = [], action) {
+//   if (action.type === VEHICLES_LOADED) {
+//     console.log('Vehicles reducers is working', action.value);
+//     return action.value;
+//   }
+//   return state;
+// }
+//
+// function vehicle(state = {}, action) {
+//   if (action.type === ONE_VEHICLE_LOADED) {
+//     console.log('single vehicle reducers is working', action.value);
+//     return action.value;
+//   }
+//   return state;
+// }
+//
+// const rootReducer = combineReducers({
+//   vehicles, vehicle
+// });
+export default combineReducers({
+  vehicleList,
 });
-
-export default rootReducer;

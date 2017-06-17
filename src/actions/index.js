@@ -8,7 +8,7 @@ export const GET_ALL_VEHICLES_ERROR = 'GET_ALL_VEHICLES_ERROR';
 // http://localhost:3001/api/vehicles
 export function loadVehicles() {
   return function (dispatch) {
-    fetch('http://localhost:3101/api/vehicles')
+    fetch('/api/vehicles')
     .then( response => {
       return response.json();
     }).then(vehicles => {
@@ -35,7 +35,7 @@ function vehiclesLoaded(vehicles) {
 
 export function getVehicle(vehicleID) {
   return function (dispatch) {
-    fetch('http://localhost:3101/api/vehicles/' + vehicleID)
+    fetch('/api/vehicles/' + vehicleID)
     .then( response => {
       return response.json();
     })
@@ -63,7 +63,7 @@ function vehicleLoaded(vehicle) {
 
 export function createVehicle(v) {
   return function (dispatch) {
-    fetch('http://localhost:3101/api/vehicles', {
+    fetch('/api/vehicles', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(v)
