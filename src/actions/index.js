@@ -16,12 +16,29 @@ export function vehicleListLoad() {
       })
       .then(data => {
         console.log('result was wrung out in response.json into data', data);
+        dispatch(vehicleListLoadSuccess(data));
       })
       .catch(err => {
         console.log('Vehicle list didn\'t load', err);
+        dispatch(vehicleListLoadFailure(err.message));
       });
   };
 }
+
+function vehicleListLoadSuccess(recievedData) {
+  return {
+    type: VEHICLE_LIST_LOAD_SUCCESS,
+    recievedData
+  };
+}
+
+function vehicleListLoadFailure(message) {
+  return {
+    type: VEHICLE_LIST_LOAD_ERROR,
+    message
+  };
+}
+
 // export const VEHICLES_LOADED = 'VEHICLES_LOADED';
 // export const ONE_VEHICLE_LOADED = 'ONE_VEHICLE_LOADED';
 // export const VEHICLE_CREATE_ERROR = 'VEHICLE_CREATE_ERROR';
