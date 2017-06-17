@@ -17,15 +17,54 @@ class vehiclesPage extends Component {
   }
 
   render() {
+    // This is destructurin of the the props into the key/value pairs they are.
+    const {items, error, loading} = this.props;
+
+    const instances = items.map( instance => {
+      return (
+        <tr key={instance._id}>
+          <td>{instance.year}</td> &nbsp; &nbsp;
+          <td>{instance.make}</td> &nbsp; &nbsp;
+          <td>{instance.model}</td> &nbsp; &nbsp;
+          <button>Delete</button> &nbsp; &nbsp;
+          <button>Edit</button> &nbsp; &nbsp;
+          <button>Delete</button> &nbsp; &nbsp;
+          <br/>
+        </tr>
+      );
+    });
+
     return (
-      <h3>This is the VehiclesPage</h3>
+      <div>
+        <h3>This is the VehiclesPage</h3>
+        <table>
+          <tbody>
+              {instances}
+          </tbody>
+        </table>
+      </div>
+
     );
   }
 }
 
 vehiclesPage.propTypes = {
-  onMount: PropTypes.func.isRequired
+  onMount: PropTypes.func.isRequired,
+  error: PropTypes.string,
+  loading: PropTypes.bool.isRequired,
+  items: PropTypes.array.isRequired,
+
 };
+
+function mapStateToProps(state) {
+// these come from the reducers. I guess through combineReducers and withRedux
+// we have access to this object. Use dot notation to get the properties out.
+  return {
+    loading: state.vehicleList.loading,
+    error: state.vehicleList.error,
+    items: state.vehicleList.items
+  };
+}
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -36,7 +75,11 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default withRedux(initStore, null, mapDispatchToProps)(vehiclesPage);
+export default withRedux(
+  initStore,
+  mapStateToProps,
+  mapDispatchToProps
+)(vehiclesPage);
 
 
 // class VehiclesPage extends Component {
