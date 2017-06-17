@@ -12,6 +12,10 @@ export function vehicleListLoad() {
     fetch('/api/vehicles')
       .then(result => {
         console.log('Vehicle list did load', result);
+        return result.json();
+      })
+      .then(data => {
+        console.log('result was wrung out in response.json into data', data);
       })
       .catch(err => {
         console.log('Vehicle list didn\'t load', err);
