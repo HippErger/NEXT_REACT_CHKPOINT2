@@ -5,10 +5,9 @@ import withRedux from 'next-redux-wrapper';
 import {initStore} from '../store';
 import PropTypes from 'prop-types';
 // import Header from '../components/Header';
-// import {
-//   loadVehicles,
-//
-// } from '../actions';
+import {
+  vehicleListLoad,
+ } from '../actions';
 
 /* eslint-disable no-unused-vars*/
 
@@ -31,6 +30,7 @@ vehiclesPage.propTypes = {
 function mapDispatchToProps(dispatch) {
   return {
     onMount: () => {
+      dispatch(vehicleListLoad());
       console.log('component did mount');
     }
   };
