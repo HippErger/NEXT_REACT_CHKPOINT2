@@ -3,13 +3,20 @@ import React, {Component} from 'react';
 // import VehiclesContainer from '../containers/Vehicles_Container';
 import withRedux from 'next-redux-wrapper';
 import {initStore} from '../store';
+import PropTypes from 'prop-types';
 // import Header from '../components/Header';
 // import {
 //   loadVehicles,
 //
 // } from '../actions';
 
+/* eslint-disable no-unused-vars*/
+
 class vehiclesPage extends Component {
+  componentDidMount() {
+    this.props.onMount();
+  }
+
   render() {
     return (
       <h3>This is the VehiclesPage</h3>
@@ -17,7 +24,19 @@ class vehiclesPage extends Component {
   }
 }
 
-export default withRedux(initStore, null, null)(vehiclesPage);
+vehiclesPage.propTypes = {
+  onMount: PropTypes.func.isRequired
+};
+
+function mapDispatchToProps(dispatch) {
+  return {
+    onMount: () => {
+      console.log('component did mount');
+    }
+  };
+}
+
+export default withRedux(initStore, null, mapDispatchToProps)(vehiclesPage);
 
 
 // class VehiclesPage extends Component {
