@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import withRedux from 'next-redux-wrapper';
 import {initStore} from '../store';
 import PropTypes from 'prop-types';
-// import Header from '../components/Header';
+import Header from '../components/Header';
 import {
   vehicleListLoad,
  } from '../actions';
@@ -36,7 +36,7 @@ class vehiclesPage extends Component {
 
     return (
       <div>
-        <h3>This is the VehiclesPage</h3>
+        <Header />
         <table>
           <tbody>
               {instances}
