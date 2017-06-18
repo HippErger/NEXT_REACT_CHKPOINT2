@@ -4,6 +4,7 @@ export const CREATE_VEHICLE_SUCCESS = 'CREATE_VEHICLE_SUCCESS';
 export const CREATE_VEHICLE_ERROR = 'CREATE_VEHICLE_ERROR';
 
 export function createNewVehicle(values) {
+  console.log('actionjs, 7,', values)
   return dispatch => {
     dispatch({
       type: CREATE_VEHICLE
