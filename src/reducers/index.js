@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux';
 import vehicleList from './vehicleList';
+import createVehicle from './createVehicle';
 
 // @TODO: remove overrides
 /* eslint-disable no-unused-vars */
@@ -63,4 +64,5 @@ import vehicleList from './vehicleList';
 // });
 export default combineReducers({
   vehicleList,
+  createVehicle
 });

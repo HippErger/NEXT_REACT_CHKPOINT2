@@ -2,11 +2,12 @@ import VehicleModel from '../models/VehicleModel';
 
 const VehicleController = {
   create: (request, response, next) => {
+    console.log('VehController, 5' , request.body);
     const addedVehicle = new VehicleModel(request.body);
 
     addedVehicle.save()
       .then(() => {
-        console.log('New vehicle saved');
+        console.log('New vehicle saved, VehController, 9', addedVehicle);
         return response.json(addedVehicle);
       })
       .catch(err => {
@@ -43,7 +44,7 @@ const VehicleController = {
 
     VehicleModel.findById(request.params.id).exec()
       .then(data => {
-        data.imgUrl = itemBody.imgUrl || data.imgUrl;
+        data.image = itemBody.image || data.image;
         data.year = itemBody.year || data.year;
         data.make = itemBody.make || data.make;
         data.model = itemBody.model || data.model;

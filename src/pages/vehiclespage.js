@@ -22,15 +22,14 @@ class vehiclesPage extends Component {
 
     const instances = items.map( instance => {
       return (
-        <tr key={instance._id}>
-          <td>{instance.year}</td> &nbsp; &nbsp;
-          <td>{instance.make}</td> &nbsp; &nbsp;
-          <td>{instance.model}</td> &nbsp; &nbsp;
-          <button>Delete</button> &nbsp; &nbsp;
-          <button>Edit</button> &nbsp; &nbsp;
-          <button>Delete</button> &nbsp; &nbsp;
-          <br/>
-        </tr>
+          <tr key={instance._id}>
+            <td>{instance.year}</td> &nbsp; &nbsp;
+            <td>{instance.make}</td> &nbsp; &nbsp;
+            <td>{instance.model}</td> &nbsp; &nbsp;
+            <a href='#' >Delete</a> &nbsp; &nbsp;
+            <a href='#' >Edit</a> &nbsp; &nbsp;
+            <a href='#' >Delete</a> &nbsp; &nbsp;
+          </tr>
       );
     });
 
@@ -131,7 +130,7 @@ export default withRedux(
 //           <Header />
 //           <VehiclesContainer />
 //           <Link href="/">
-//             <button>Home</button>
+//             <a>Home</a>
 //           </Link>
 //         </div>
 //       );
@@ -141,7 +140,7 @@ export default withRedux(
 //         <Header />
 //         <h4>No vehicles found</h4>
 //         <Link href="/">
-//           <button>Home</button>
+//           <a>Home</a>
 //         </Link>
 //       </div>
 //     );

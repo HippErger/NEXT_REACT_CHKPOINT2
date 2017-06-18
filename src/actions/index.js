@@ -1,9 +1,9 @@
 import 'isomorphic-fetch';
 export const CREATE_VEHICLE = 'CREATE_VEHICLE';
-export const CREATE_VEHICLE_SUCESS = 'CREATE_VEHICLE_SUCESS';
+export const CREATE_VEHICLE_SUCCESS = 'CREATE_VEHICLE_SUCCESS';
 export const CREATE_VEHICLE_ERROR = 'CREATE_VEHICLE_ERROR';
 
-export function createNewVehicle(event) {
+export function createNewVehicle(values) {
   return dispatch => {
     dispatch({
       type: CREATE_VEHICLE
@@ -11,17 +11,42 @@ export function createNewVehicle(event) {
 
     fetch('/api/vehicles', {
       method: 'POST',
-      body: JSON.stringify(event),
+      body: values,
       header: {
         'Content-Type': 'application/json'
       }
     })
     .then( response => {
-      console.log('Create was a success', response);
+      console.log('Create was a success, actions.js, 20', response);
+      return response.json();
+    })
+    .then(data => {
+      if (data.message) {
+        console.log('there was an error with the vehicle, actionsjs, 25', data.message);
+        dispatch(createVehicleError(data.message));
+      } else {
+        console.log('the vehicle was created successfully, actionsjs, 28', data);
+        dispatch(createVehicleSuccess(data));
+      }
     })
     .catch(err => {
-      console.log('Create was a failure', err);
+      console.log('Create Vehicle was a failure, actionsjs, 33', err);
     });
+  };
+}
+
+function createVehicleError(message) {
+  console.log('This is an error message from CreateVehicle', message);
+  return {
+    type: CREATE_VEHICLE_ERROR,
+    message
+  };
+}
+
+function createVehicleSuccess(item) {
+  return {
+    type: CREATE_VEHICLE_SUCCESS,
+    item
   };
 }
 

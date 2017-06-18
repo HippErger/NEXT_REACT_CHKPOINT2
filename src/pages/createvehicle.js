@@ -5,10 +5,13 @@ import withRedux from 'next-redux-wrapper';
 import {initStore} from '../store';
 import VehicleForm from '../components/VehicleForm';
 import PropTypes from 'prop-types';
+import {createNewVehicle} from '../actions';
 
 class createVehicle extends Component {
 
   render() {
+    const {error} = this.props;
+
     return (
       <div>
         <Header />
@@ -18,6 +21,9 @@ class createVehicle extends Component {
             this.props.onSubmit(values);
           }}
         />
+        {error && (
+          <p>{error}</p>
+        )}
         <Link href="/vehiclespage">
           <button >
             Take Me to All Cars
@@ -36,14 +42,26 @@ class createVehicle extends Component {
 
 createVehicle.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-
+  error: PropTypes.string,
+  // loading: PropTypes.bool.isRequired,
 };
 
-function mapDispatchToProps() {
+function mapStateToProps(state) {
+  return {
+    error: state.createVehicle.error
+  };
+}
+
+function mapDispatchToProps(dispatch) {
   return {
     onSubmit: values => {
+      dispatch(createNewVehicle(values));
       console.log('Form dispatch was submitted', values);
     }};
 }
 
-export default withRedux(initStore, null, mapDispatchToProps)(createVehicle);
+export default withRedux(
+  initStore,
+  mapStateToProps,
+  mapDispatchToProps
+)(createVehicle);
