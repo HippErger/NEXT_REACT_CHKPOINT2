@@ -21,7 +21,7 @@ class VehicleForm extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log('from create vehicle page', event);
+    console.log('from create vehicle form', event);
     this.props.onSubmit(this.state);
   };
 
@@ -37,9 +37,10 @@ class VehicleForm extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input type="text"
+          <input
+            type="text"
             name="imgUrl"
-            placeholder="imgUrl"
+            placeholder="image link"
             onChange={this.handleInputChange}
           />
           &nbsp; &nbsp;
@@ -47,6 +48,7 @@ class VehicleForm extends Component {
             type="text"
             name="year"
             placeholder="year"
+            value={year}
             onChange={this.handleInputChange}
           />
           <br />
@@ -55,6 +57,7 @@ class VehicleForm extends Component {
             type="text"
             name="make"
             placeholder="make"
+            value={make}
             onChange={this.handleInputChange}
           />
           &nbsp; &nbsp;
@@ -62,6 +65,7 @@ class VehicleForm extends Component {
             type="text"
             name="model"
             placeholder="model"
+            value={model}
             onChange={this.handleInputChange}
           />
           <br />
@@ -70,6 +74,7 @@ class VehicleForm extends Component {
             type="text"
             name="price"
             placeholder="price"
+            value={price}
             onChange={this.handleInputChange}
           />
           &nbsp; &nbsp;
@@ -77,6 +82,7 @@ class VehicleForm extends Component {
             type="text"
             name="km"
             placeholder="km"
+            value={km}
             onChange={this.handleInputChange}
           />
           <br />
@@ -85,6 +91,7 @@ class VehicleForm extends Component {
             type="text"
             name="miles"
             placeholder="miles"
+            value={miles}
             onChange={this.handleInputChange}
           />
           &nbsp; &nbsp;
@@ -92,6 +99,7 @@ class VehicleForm extends Component {
             type="text"
             name="fuel"
             placeholder="fuel"
+            value={fuel}
             onChange={this.handleInputChange}
           />
           <br />
@@ -100,6 +108,7 @@ class VehicleForm extends Component {
             type="text"
             name="city"
             placeholder="city"
+            value={city}
             onChange={this.handleInputChange}
           />
           &nbsp; &nbsp;
@@ -107,6 +116,7 @@ class VehicleForm extends Component {
             type="text"
             name="newCar"
             placeholder="True/False"
+            value={newCar}
             onChange={this.handleInputChange}
           />
           <br />

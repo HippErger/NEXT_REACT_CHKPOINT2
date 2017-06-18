@@ -12,7 +12,11 @@ class createVehicle extends Component {
       <div>
         <Header />
         <h3>You can add a new vehicle here</h3>
-        <VehicleForm />
+        <VehicleForm
+          onSubmit={values => {
+            console.log('this is from createVehicle page,', values);
+          }}
+        />
         <Link href="/vehiclespage">
           <button >
             Take Me to All Cars
