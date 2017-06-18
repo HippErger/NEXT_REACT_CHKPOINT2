@@ -1,29 +1,36 @@
-import 'isomorphic-fetch';
+// import 'isomorphic-fetch';
+import 'whatwg-fetch';
 export const CREATE_VEHICLE = 'CREATE_VEHICLE';
 export const CREATE_VEHICLE_SUCCESS = 'CREATE_VEHICLE_SUCCESS';
 export const CREATE_VEHICLE_ERROR = 'CREATE_VEHICLE_ERROR';
 
+// had on line 27
+// .then( response => {
+//   console.log('Create was a success, actions.js, 20', response);
+//   return response.json();
+// })
+
 export function createNewVehicle(values) {
-  console.log('actionjs, 7,', values)
+  console.log('actionjs, 13,', values);
   return dispatch => {
     dispatch({
-      type: CREATE_VEHICLE
+      type: CREATE_VEHICLE,
     });
+    console.log('actionjs, 18,', JSON.stringify(values));
 
     fetch('/api/vehicles', {
       method: 'POST',
-      body: values,
-      header: {
-        'Content-Type': 'application/json'
-      }
+      header: {'Content-Type': 'application/json'},
+      body: JSON.stringify(values),
     })
     .then( response => {
+      console.log('actionjs, 26,', JSON.stringify(values));
       console.log('Create was a success, actions.js, 20', response);
       return response.json();
     })
     .then(data => {
       if (data.message) {
-        console.log('there was an error with the vehicle, actionsjs, 25', data.message);
+        console.log('there was an error with the vehicle, actionsjs, 29', data.message);
         dispatch(createVehicleError(data.message));
       } else {
         console.log('the vehicle was created successfully, actionsjs, 28', data);

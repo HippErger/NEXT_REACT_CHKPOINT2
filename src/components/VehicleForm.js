@@ -139,8 +139,8 @@ class VehicleForm extends Component {
             type="submit"
             value="Submit"
           />
-             &nbsp; &nbsp;
         </form>
+        <br/>
       </div>
     );
   }

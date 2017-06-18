@@ -6,18 +6,17 @@ const vehicleSchema = mongoose.Schema({
   image: String,
   km: String,
   miles: String,
+  make: String,
   model: String,
   newCar: String,
   price: String,
   year: String,
 });
 
+
 export default mongoose.model('Vehicle', vehicleSchema);
 
 /*
-
-
-
   image: String,
   year: String,
   make: String,
