@@ -1,4 +1,30 @@
 import 'isomorphic-fetch';
+export const CREATE_VEHICLE = 'CREATE_VEHICLE';
+export const CREATE_VEHICLE_SUCESS = 'CREATE_VEHICLE_SUCESS';
+export const CREATE_VEHICLE_ERROR = 'CREATE_VEHICLE_ERROR';
+
+export function createNewVehicle(event) {
+  return dispatch => {
+    dispatch({
+      type: CREATE_VEHICLE
+    });
+
+    fetch('/api/vehicles', {
+      method: 'POST',
+      body: JSON.stringify(event),
+      header: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then( response => {
+      console.log('Create was a success', response);
+    })
+    .catch(err => {
+      console.log('Create was a failure', err);
+    });
+  };
+}
+
 export const VEHICLE_LIST_LOAD = 'VEHICLE_LIST_LOAD';
 export const VEHICLE_LIST_LOAD_SUCCESS = 'VEHICLE_LIST_LOAD_SUCCESS';
 export const VEHICLE_LIST_LOAD_ERROR = 'VEHICLE_LIST_LOAD_ERROR';

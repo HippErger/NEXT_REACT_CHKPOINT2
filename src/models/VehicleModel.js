@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const vehicleSchema = mongoose.Schema({
-  imgUrl: String,
+  image: String,
   year: String,
   make: String,
   model: String,

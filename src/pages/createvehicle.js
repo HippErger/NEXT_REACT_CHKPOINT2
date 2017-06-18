@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import withRedux from 'next-redux-wrapper';
 import {initStore} from '../store';
 import VehicleForm from '../components/VehicleForm';
+import PropTypes from 'prop-types';
 
 class createVehicle extends Component {
 
@@ -14,7 +15,7 @@ class createVehicle extends Component {
         <h3>You can add a new vehicle here</h3>
         <VehicleForm
           onSubmit={values => {
-            console.log('this is from createVehicle page,', values);
+            this.props.onSubmit(values);
           }}
         />
         <Link href="/vehiclespage">
@@ -33,10 +34,15 @@ class createVehicle extends Component {
   }
 }
 
+createVehicle.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+
+};
+
 function mapDispatchToProps() {
   return {
     onSubmit: values => {
-      console.log('Form was submitted', values);
+      console.log('Form dispatch was submitted', values);
     }};
 }
 

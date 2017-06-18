@@ -6,7 +6,7 @@ class VehicleForm extends Component {
   constructor() {
     super();
     this.state = {
-      imgURL: '',
+      image: '',
       year: '',
       make: '',
       model: '',
@@ -20,9 +20,22 @@ class VehicleForm extends Component {
   }
 
   handleSubmit = event => {
+    const clearFormState = {
+      image: '',
+      year: '',
+      make: '',
+      model: '',
+      price: '',
+      km: '',
+      miles: '',
+      fuel: '',
+      city: '',
+      newCar: ''
+    };
+
     event.preventDefault();
-    console.log('from create vehicle form', event);
     this.props.onSubmit(this.state);
+    this.setState({...clearFormState});
   };
 
   handleInputChange = event => {
@@ -32,15 +45,16 @@ class VehicleForm extends Component {
   }
 
   render() {
-    const {imgURL, year, make, model, price, km, miles, fuel, city, newCar} = this.state;
+    const {image, year, make, model, price, km, miles, fuel, city, newCar} = this.state;
 
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
-            name="imgUrl"
+            name="image"
             placeholder="image link"
+            value={image}
             onChange={this.handleInputChange}
           />
           &nbsp; &nbsp;
