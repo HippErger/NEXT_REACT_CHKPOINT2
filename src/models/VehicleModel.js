@@ -26,5 +26,5 @@ export default mongoose.model('Vehicle', vehicleSchema);
   miles: String,
   fuel: String,
   city: String,
-  newCar: String,
+  newCar: Bool,
   */

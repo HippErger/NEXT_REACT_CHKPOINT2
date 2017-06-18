@@ -5,7 +5,6 @@ import {
   CREATE_VEHICLE_ERROR,
 } from '../actions';
 
-/* eslint-disable no-unused-vars */
 function loading(state = false, action) {
   switch (action.type) {
     case CREATE_VEHICLE:

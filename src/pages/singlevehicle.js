@@ -1,6 +1,4 @@
 import React from 'react';
-// import Link from 'next/link';
-// import VehiclesContainer from '../containers/Vehicles_Container';
 import withRedux from 'next-redux-wrapper';
 import {initStore} from '../store';
 import VehicleContainer from '../containers/VehicleContainer';
