@@ -5,10 +5,11 @@ import {initStore} from '../store';
 import PropTypes from 'prop-types';
 
 class VehicleDetails extends Component {
-  // put an onMount function that loads the details of this vehicle.
+  // A lifecyle hook that allows us to trigger another function when it mounts
   componentDidMount() {
     this.props.onMount();
   }
+  // class Components always have to have a render function
   render() {
     return (
       <div>

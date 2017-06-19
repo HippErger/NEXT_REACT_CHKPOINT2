@@ -16,7 +16,7 @@ class vehiclesPage extends Component {
   }
 
   render() {
-    // This is destructurin of the the props into the key/value pairs they are.
+    // This is destructuring of the the props into the key/value pairs they are.
     const {items, error, loading} = this.props;
 
     const instances = items.map( instance => {
@@ -26,7 +26,7 @@ class vehiclesPage extends Component {
             <td>{instance.year}</td> &nbsp; &nbsp;
             <td>{instance.make}</td> &nbsp; &nbsp;
             <td>{instance.model}</td> &nbsp; &nbsp;
-            <Link href="/vehicledetails">
+            <Link href={{pathname: '/vehicledetails', query: {_id: instance._id}}} >
               See More
             </Link>
             &nbsp; &nbsp;
