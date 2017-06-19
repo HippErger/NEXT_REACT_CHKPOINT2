@@ -3,6 +3,7 @@ import withRedux from 'next-redux-wrapper';
 import {initStore} from '../store';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
+import Link from 'next/link';
 import {
   vehicleListLoad,
  } from '../actions';
@@ -20,11 +21,15 @@ class vehiclesPage extends Component {
 
     const instances = items.map( instance => {
       return (
+
           <tr key={instance._id}>
             <td>{instance.year}</td> &nbsp; &nbsp;
             <td>{instance.make}</td> &nbsp; &nbsp;
             <td>{instance.model}</td> &nbsp; &nbsp;
-            <a href='#' >Delete</a> &nbsp; &nbsp;
+            <Link href="/vehicledetails">
+              See More
+            </Link>
+            &nbsp; &nbsp;
             <a href='#' >Edit</a> &nbsp; &nbsp;
             <a href='#' >Delete</a> &nbsp; &nbsp;
           </tr>
