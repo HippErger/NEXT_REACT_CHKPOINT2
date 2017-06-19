@@ -3,12 +3,7 @@ import {
   VEHICLE_LIST_LOAD,
   VEHICLE_LIST_LOAD_SUCCESS,
   VEHICLE_LIST_LOAD_ERROR,
-
 } from '../actions';
-/*
-export const VEHICLE_LIST_LOAD = 'VEHICLE_LIST_LOAD';
-export const VEHICLE_LIST_LOAD_SUCCESS = 'VEHICLE_LIST_LOAD_SUCCESS';
-export const VEHICLE_LIST_LOAD_ERROR = 'VEHICLE_LIST_LOAD_ERROR';*/
 
 /* eslint-disable no-unused-vars */
 function loading(state = false, action) {

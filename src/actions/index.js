@@ -1,5 +1,48 @@
 // import 'isomorphic-fetch';
 import 'whatwg-fetch';
+export const LOAD_ONE_VEHICLE = 'LOAD_ONE_VEHICLE';
+export const LOAD_ONE_VEHICLE_SUCCESS = 'LOAD_ONE_VEHICLE_SUCCESS';
+export const LOAD_ONE_VEHICLE_FAILURE = 'LOAD_ONE_VEHICLE_FAILURE';
+
+export function loadOneVehicle() {
+  console.log('loadOneVehicle was called in actions');
+  return dispatch => {
+    dispatch({
+      type: LOAD_ONE_VEHICLE,
+    });
+
+    // this is hard-coded dummy id to see if we can load the details
+    fetch('/api/vehicles/5931b7939985bb67ed8c7bfc')
+      .then( result => {
+        console.log('got a vehicle at actionjs, 17', result);
+        return result.json();
+      })
+      .then( data => {
+        console.log('data was reveived at actionsjs, 21', data);
+        dispatch(oneVehicleLoadSuccess(data));
+      })
+      .catch(err => {
+        console.log('there was an error at actionsjs, 25', err);
+        dispatch(oneVehicleLoadFailure(err.message));
+      });
+  };
+}
+
+// these are function to be called and return through dispatches asyncronously
+function oneVehicleLoadSuccess(recievedData) {
+  return {
+    type: LOAD_ONE_VEHICLE_SUCCESS,
+    recievedData
+  };
+}
+
+function oneVehicleLoadFailure(message) {
+  return {
+    type: LOAD_ONE_VEHICLE_FAILURE,
+    message
+  };
+}
+
 export const CREATE_VEHICLE = 'CREATE_VEHICLE';
 export const CREATE_VEHICLE_SUCCESS = 'CREATE_VEHICLE_SUCCESS';
 export const CREATE_VEHICLE_ERROR = 'CREATE_VEHICLE_ERROR';
@@ -11,7 +54,7 @@ export const CREATE_VEHICLE_ERROR = 'CREATE_VEHICLE_ERROR';
 // })
 
 export function createNewVehicle(values) {
-  console.log('actionjs, 13,', values);
+  console.log('actionjs, 39,', values);
   return dispatch => {
     dispatch({
       type: CREATE_VEHICLE,

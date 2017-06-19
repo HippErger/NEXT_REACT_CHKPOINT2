@@ -3,14 +3,26 @@ import withRedux from 'next-redux-wrapper';
 import Header from '../components/Header';
 import {initStore} from '../store';
 import PropTypes from 'prop-types';
+import {loadOneVehicle} from '../actions';
 
 class VehicleDetails extends Component {
+  // constructor(props) {
+  //   super(props);
+  // }
+
+  // static async getInitialProps({req}) {
+  //   console.log('initProps');
+  //   return req ? { _id: req.headers['_id'] } : { _id: navigator._id };
+  // }
+
   // A lifecyle hook that allows us to trigger another function when it mounts
   componentDidMount() {
     this.props.onMount();
   }
   // class Components always have to have a render function
   render() {
+    // @TODO in here we need to access state.currentVehicle.whatever-we-want
+    console.log('from vehicle detail page', this.props);
     return (
       <div>
         <Header />
@@ -29,6 +41,7 @@ function mapDispatchToProps(dispatch) {
   return {
     onMount: () => {
       console.log('vehicle detail page did load');
+      dispatch(loadOneVehicle());
     }
   };
 }

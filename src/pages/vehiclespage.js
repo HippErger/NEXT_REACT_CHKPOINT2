@@ -72,7 +72,6 @@ function mapDispatchToProps(dispatch) {
   return {
     onMount: () => {
       dispatch(vehicleListLoad());
-      console.log('component did mount');
     }
   };
 }
