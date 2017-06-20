@@ -1,13 +1,12 @@
-import VehicleModel from '../models/VehicleModel';
+import vehicleSchema from '../models/VehicleModel';
 
+// changed post 14:32
 const VehicleController = {
   create: (request, response, next) => {
-    console.log('VehController, 5' , request.body);
-    const addedVehicle = new VehicleModel(request.body);
+    const addedVehicle = new vehicleSchema(request.body);
 
     addedVehicle.save()
       .then(() => {
-        console.log('New vehicle saved, VehController, 9', addedVehicle);
         return response.json(addedVehicle);
       })
       .catch(err => {
@@ -16,7 +15,7 @@ const VehicleController = {
   },
 
   list: (request, response, next) => {
-    VehicleModel.find({}).exec()
+    vehicleSchema.find({}).exec()
       .then(data => {
         console.log('Vehicle DB fetched');
         return response.json(data);
@@ -29,7 +28,7 @@ const VehicleController = {
   listOne: (request, response, next) => {
     const query = request.params.id;
 
-    VehicleModel.findById(query)
+    vehicleSchema.findById(query)
       .then(data => {
         console.log('Vehicle DB, individual was requested,');
         return response.json(data);
@@ -42,7 +41,7 @@ const VehicleController = {
   update: (request, response, next) => {
     const itemBody = request.body;
 
-    VehicleModel.findById(request.params.id).exec()
+    vehicleSchema.findById(request.params.id).exec()
       .then(data => {
         data.image = itemBody.image || data.image;
         data.year = itemBody.year || data.year;
@@ -68,7 +67,7 @@ const VehicleController = {
   delete: (request, response, next) => {
     const query = request.params.id;
 
-    VehicleModel.findByIdAndRemove(query).exec()
+    vehicleSchema.findByIdAndRemove(query).exec()
       .then(data => {
         console.log('Vehicle ', query, 'was deleted');
         return response.json(data);

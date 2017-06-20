@@ -1,30 +1,57 @@
 import mongoose from 'mongoose';
 
 const vehicleSchema = mongoose.Schema({
-  city: String,
-  fuel: String,
-  image: String,
-  km: String,
-  miles: String,
-  make: String,
-  model: String,
-  newCar: String,
-  price: String,
-  year: String,
+  city: {
+    type: String,
+    maxlength: [ 25, 'Maximum character limit reached. Please try again.' ],
+    required: false
+  },
+  fuel: {
+    type: String,
+    maxlength: [ 25, 'Maximum character limit reached. Please try again.' ],
+    required: false
+  },
+  image: {
+    type: String,
+    maxlength: [ 25, 'Maximum character limit reached. Please try again.' ],
+    required: false
+  },
+  km: {
+    type: String,
+    maxlength: [ 25, 'Maximum character limit reached. Please try again.' ],
+    required: false
+  },
+  miles: {
+    type: String,
+    maxlength: [ 25, 'Maximum character limit reached. Please try again.' ],
+    required: false
+  },
+  make: {
+    type: String,
+    maxlength: [ 25, 'Maximum character limit reached. Please try again.' ],
+    required: true
+  },
+  model: {
+    type: String,
+    maxlength: [ 25, 'Maximum character limit reached. Please try again.' ],
+    required: true
+  },
+  newCar: {
+    type: String,
+    maxlength: [ 25, 'Maximum character limit reached. Please try again.' ],
+    required: false
+  },
+  price: {
+    type: String,
+    maxlength: [ 25, 'Maximum character limit reached. Please try again.' ],
+    required: false
+  },
+  year: {
+    type: String,
+    maxlength: [ 25, 'Maximum character limit reached. Please try again.' ],
+    required: true
+  },
 });
 
 
 export default mongoose.model('Vehicle', vehicleSchema);
-
-/*
-  image: String,
-  year: String,
-  make: String,
-  model: String,
-  price: String,
-  km: String,
-  miles: String,
-  fuel: String,
-  city: String,
-  newCar: Bool,
-  */

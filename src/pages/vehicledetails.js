@@ -18,6 +18,7 @@ class VehicleDetails extends Component {
   // A lifecyle hook that allows us to trigger another function when it mounts
   componentDidMount() {
     this.props.onMount();
+    // a function that gets the id of the individual
   }
   // class Components always have to have a render function
   render() {
