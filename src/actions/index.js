@@ -4,7 +4,21 @@ import 'isomorphic-fetch';
 export const DELETE_THIS_ITEM = 'DELETE_THIS_ITEM';
 
 export function deleteThisItem(itemId) {
-  return console.log('received dispatch in actionjs, 7', itemId);
+  console.log('received dispatch in actionjs, 7', itemId);
+  return dispatch => {
+    dispatch({
+      type: DELETE_THIS_ITEM
+    });
+
+    fetch('/api/vehicles/' + itemId,{
+      method: 'DELETE',
+      headers: {'Content-Type': 'application/json'}
+    })
+    .then(() => {
+      console.log('delete happend in actionsjs, 18', itemId);
+      dispatch(vehicleListLoad());
+    });
+  };
 }
 
 export const LOAD_ONE_VEHICLE = 'LOAD_ONE_VEHICLE';
