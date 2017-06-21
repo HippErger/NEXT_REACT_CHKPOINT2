@@ -39,6 +39,7 @@ class vehiclesPage extends Component {
     return (
       <div>
         <Header />
+        <h5>We&apos;re here</h5>
         <table>
           <tbody>
               {instances}

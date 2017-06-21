@@ -21,14 +21,3 @@ function Header() {
 }
 
 export default Header;
-
-/*
-&nbsp; &nbsp;
-<Link href="/">
-<a>Contacts</a>
-</Link>
-&nbsp; &nbsp;
-<Link href="/">
-  <a>Products</a>
-</Link>
-*/

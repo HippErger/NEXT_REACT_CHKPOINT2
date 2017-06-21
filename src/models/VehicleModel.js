@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const vehicleSchema = mongoose.Schema({
+const vehicleModel = mongoose.Schema({
   city: {
     type: String,
     maxlength: [ 25, 'Maximum character limit reached. Please try again.' ],
@@ -54,4 +54,4 @@ const vehicleSchema = mongoose.Schema({
 });
 
 
-export default mongoose.model('Vehicle', vehicleSchema);
+export default mongoose.model('Vehicle', vehicleModel);

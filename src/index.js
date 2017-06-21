@@ -14,7 +14,6 @@ const nextApp = next({
 const handle = nextApp.getRequestHandler();
 const PORT = 3001;
 
-
 // this promise must be global so mongoose can use it with DB and in here
 mongoose.Promise = global.Promise;
 // Mongoose and DB connection

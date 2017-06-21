@@ -1,9 +1,8 @@
-import vehicleSchema from '../models/VehicleModel';
+import vehicleModel from '../models/VehicleModel';
 
-// changed post 14:32
 const VehicleController = {
   create: (request, response, next) => {
-    const addedVehicle = new vehicleSchema(request.body);
+    const addedVehicle = new vehicleModel(request.body);
 
     addedVehicle.save()
       .then(() => {
@@ -15,7 +14,7 @@ const VehicleController = {
   },
 
   list: (request, response, next) => {
-    vehicleSchema.find({}).exec()
+    vehicleModel.find({}).exec()
       .then(data => {
         console.log('Vehicle DB fetched');
         return response.json(data);
@@ -28,7 +27,7 @@ const VehicleController = {
   listOne: (request, response, next) => {
     const query = request.params.id;
 
-    vehicleSchema.findById(query)
+    vehicleModel.findById(query)
       .then(data => {
         console.log('Vehicle DB, individual was requested,');
         return response.json(data);
@@ -41,7 +40,7 @@ const VehicleController = {
   update: (request, response, next) => {
     const itemBody = request.body;
 
-    vehicleSchema.findById(request.params.id).exec()
+    vehicleModel.findById(request.params._id).exec()
       .then(data => {
         data.image = itemBody.image || data.image;
         data.year = itemBody.year || data.year;
@@ -67,12 +66,14 @@ const VehicleController = {
   delete: (request, response, next) => {
     const query = request.params.id;
 
-    vehicleSchema.findByIdAndRemove(query).exec()
+    vehicleModel.findByIdAndRemove(query).exec()
       .then(data => {
         console.log('Vehicle ', query, 'was deleted');
         return response.json(data);
       })
       .catch(err => {
+        console.log('This is from VehController, 76', query);
+        console.log('This is from VehController, 77', err.message);
         return next(err);
       });
   }
