@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import Link from 'next/link';
 import {
+  deleteThisItem,
   vehicleListLoad,
  } from '../actions';
 
@@ -80,6 +81,7 @@ function mapDispatchToProps(dispatch) {
     },
     deleteItem: id => {
       console.log('deleteItem was clicked', id);
+      dispatch(deleteThisItem(id));
     }
   };
 }

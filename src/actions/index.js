@@ -1,5 +1,12 @@
 import 'isomorphic-fetch';
 // import 'whatwg-fetch';
+
+export const DELETE_THIS_ITEM = 'DELETE_THIS_ITEM';
+
+export function deleteThisItem(itemId) {
+  return console.log('received dispatch in actionjs, 7', itemId);
+}
+
 export const LOAD_ONE_VEHICLE = 'LOAD_ONE_VEHICLE';
 export const LOAD_ONE_VEHICLE_SUCCESS = 'LOAD_ONE_VEHICLE_SUCCESS';
 export const LOAD_ONE_VEHICLE_FAILURE = 'LOAD_ONE_VEHICLE_FAILURE';
