@@ -30,8 +30,11 @@ class vehiclesPage extends Component {
               See More
             </Link>
             &nbsp; &nbsp;
-            <a href='#' >Edit</a> &nbsp; &nbsp;
-            <a href='#' >Delete</a> &nbsp; &nbsp;
+            <button onClick={() => {this.props.deleteItem(instance._id);}} >
+              Delete
+            </button>
+            &nbsp; &nbsp;
+            <a href='#' > Edit </a> &nbsp; &nbsp;
           </tr>
       );
     });
@@ -56,6 +59,7 @@ vehiclesPage.propTypes = {
   error: PropTypes.string,
   loading: PropTypes.bool.isRequired,
   items: PropTypes.array.isRequired,
+  deleteItem: PropTypes.func.isRequired,
 
 };
 
@@ -73,6 +77,9 @@ function mapDispatchToProps(dispatch) {
   return {
     onMount: () => {
       dispatch(vehicleListLoad());
+    },
+    deleteItem: id => {
+      console.log('deleteItem was clicked', id);
     }
   };
 }
