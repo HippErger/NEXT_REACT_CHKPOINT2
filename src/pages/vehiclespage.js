@@ -80,7 +80,6 @@ function mapDispatchToProps(dispatch) {
       dispatch(vehicleListLoad());
     },
     deleteItem: id => {
-      console.log('deleteItem was clicked', id);
       dispatch(deleteThisItem(id));
     }
   };
