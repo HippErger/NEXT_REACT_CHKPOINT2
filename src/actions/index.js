@@ -2,6 +2,8 @@ import 'isomorphic-fetch';
 // import 'whatwg-fetch';
 
 export const DELETE_THIS_ITEM = 'DELETE_THIS_ITEM';
+export const ITEM_TO_DELETE_FAILED = 'ITEM_TO_DELETE_FAILED';
+export const ITEM_DELETED_SUCCESSFULLY = 'ITEM_DELETED_SUCCESSFULLY';
 
 export function deleteThisItem(itemId) {
   return dispatch => {
@@ -13,13 +15,26 @@ export function deleteThisItem(itemId) {
       method: 'DELETE',
       headers: {'Content-Type': 'application/json'}
     })
-    .then(() => dispatch(vehicleListLoad()));
+    .then(() => dispatch(deleteItemSuccess()))
+    .then(() => dispatch(vehicleListLoad()))
+    .catch(err => {
+      dispatch(itemFailedtoDelete(err.message));
+    });
   };
 }
 
-// function deleteItemSuccess() {
-//   
-// }
+function deleteItemSuccess() {
+  return {
+    type: ITEM_DELETED_SUCCESSFULLY,
+  };
+}
+
+function itemFailedtoDelete(message) {
+  return {
+    type: ITEM_TO_DELETE_FAILED,
+    message
+  };
+}
 
 export const LOAD_ONE_VEHICLE = 'LOAD_ONE_VEHICLE';
 export const LOAD_ONE_VEHICLE_SUCCESS = 'LOAD_ONE_VEHICLE_SUCCESS';
