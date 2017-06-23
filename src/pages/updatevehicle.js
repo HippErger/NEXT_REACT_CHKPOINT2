@@ -13,8 +13,7 @@ class updateVehicle extends Component {
     return (
       <div>
         <Header />
-        <h4>This is the update page for id: </h4>
-        {id}
+        <h4>You are editing vehicle with id: {id} </h4>
         <VehicleForm
           onSubmit={values => {
             this.props.submitUpdate(values, id);
