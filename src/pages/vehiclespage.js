@@ -29,7 +29,7 @@ class vehiclesPage extends Component {
             <td>{instance.model}</td> &nbsp; &nbsp;
             <Link href={{pathname: '/vehicledetails', query: {_id: instance._id}}} >
               See More
-            </Link>
+            </Link> 
             &nbsp; &nbsp;
             <button onClick={() => {this.props.deleteItem(instance._id);}} >
               Delete
@@ -84,6 +84,15 @@ function mapDispatchToProps(dispatch) {
     }
   };
 }
+/* Could see use the link but I think I'd like to try calling an action that loads the info
+  <Link href={{pathname: '/vehicledetails', query: {_id: instance._id}}} >
+    See More
+  </Link>
+
+  <Link href='/vehicledetails' idValue={instance._id} >
+    See More
+  </Link>
+  */
 
 export default withRedux(
   initStore,

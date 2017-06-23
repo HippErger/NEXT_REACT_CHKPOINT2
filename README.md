@@ -217,6 +217,7 @@ export default Page
   *The gang of 5 -
   *Design Pattern, Element of Reusable object-oriented software
     what is an abstract, ... ... ... ..
+    *Also, find the patterns online
   * Pramp, find code fighting apps or websites
   * spend 70% writing code and 30% on researching
   * Look for small agencies that just build websites
@@ -245,3 +246,103 @@ in the interview
   *They want to learn how you learn to solve problems
   *Tell them your approach
   *Find the structured way of solving problems
+
+  Find all the things I need to learn about CS
+
+  Algorithm and data structures
+    - Can help but really lowdash provides all of these.
+
+  Learn exactly how Javascript works.
+
+  *Really Important - Don't go mental while programming - its unique.
+  *Very common burnout
+    *EXERCISE!!!
+    *Release the stress
+    *Look for standup desk
+    *Practice in meditation
+    *This work on the computer really has side effects
+    *it has constant stress!!! and without Release
+    *Do the exercise first and coding second -
+    *Really focus on diet and exercise before Coding
+
+
+  Before building
+    *Gather all the features First
+    *Create a concrete Scope
+    *Layout the plan for the project
+    *Break it down into smaller parts
+    *Figure out all of the things you'll needs
+    *List which parts will come first based on dependencies
+    *Create issues on Github for these
+
+  UX/UI
+    *Designers give specs in a drawing
+    *Developers put that into
+    *
+
+  Protocol for fetching data
+    GraphedUL - this is how facebook does its data fetching
+    Really look up what the big companies are using to learn the best Technologies
+
+  Fields to get into
+    *Big data
+      *Data stores
+      *Data structures
+
+  Machine learning
+    *AI
+    *Higher
+
+  React-native - looks the same
+
+  React-VR - build VR with React!!
+
+  Small project good practice:
+    Look for ones that are used by people
+    Build clones -
+      Reddit clone
+      Netflix clone
+      Twitter clone
+      Build for fame or freelancer
+
+  elance
+  freelancer
+  codefor.cash $12/month for ACA students
+
+  June 30th Main Floor @ 5:30; with VR - 7-8 presentations
+
+  SPAs
+  Slower
+  Bots can't read it to help with search engines
+
+
+  Zac's suggestions
+  *go to github -
+    find bugs, try to fix it, make a proper issue ticket for bugs
+    Submit FAQs
+
+  *  Learn how computers work - just the fundamentals help learn and think about how to programming
+  * Suse or Ubuntu - put on a spare laptop or
+
+    Docker, creates virtual machines
+    Create a free AWS account
+    Learn how to log into it via ssh
+    Mess with Linux
+    Get an app of mine going in AWS
+
+    Install Archlinux.org - This will help you learn the command LinkedIn
+    But do suse or unbunto first to learn Linux
+    solstice is an up an coming one.
+
+    Learn VIM -
+      Learn VIM - check out Zac's suggestions,
+      tmux
+
+    Emac keybindings
+
+    do not type psudo -
+
+    -rf is a force
+
+    Setup a linux machine on AWS for free and play with command line
+        use the cheatsheets  files.fosswire.com/2007/08/fwunixef.pdf
