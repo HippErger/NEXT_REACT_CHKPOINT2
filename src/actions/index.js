@@ -4,7 +4,40 @@ import 'isomorphic-fetch';
                         Update Vehicle Details
 /////////////////////////////////////////////////////////////////////////// */
 
+export const UPDATE_THIS_VEHICLE = 'UPDATE_THIS_VEHICLE';
+export const VEHICLE_UPDATE_SUCCESS = 'VEHICLE_UPDATE_SUCCESS';
+export const VEHICLE_UPDATE_FAILURE = 'VEHICLE_UPDATE_FAILURE';
 
+export function updateThisVehicle(values) {
+  return console.log('from actionsjs, 12', values);
+
+  // dispatch => {
+  //   dispatch({
+  //     type: UPDATE_THIS_VEHICLE
+  //   });
+
+    // fetch('/api/vehicles', {
+    //   method: 'PUT',
+    //   headers: {'Content-Type': 'application/json'}
+    // })
+    // .then(() => dispatch(updateVehicleSuccess()))
+    // .then(() => dispatch(vehicleListLoad()))
+    // .catch(err => dispatch(updateVehicleFailure(err.message)));
+  // };
+}
+
+// function updateVehicleSuccess() {
+//   return {
+//     type: VEHICLE_UPDATE_SUCCESS
+//   };
+// }
+//
+// function updateVehicleFailure(errorMessage) {
+//   return {
+//     type: VEHICLE_UPDATE_FAILURE,
+//     errorMessage
+//   };
+// }
 
 /* ///////////////////////////////////////////////////////////////////////////
                           Delete Vehicle

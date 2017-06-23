@@ -56,7 +56,6 @@ function mapDispatchToProps(dispatch) {
   return {
     onSubmit: values => {
       dispatch(createNewVehicle(values));
-      console.log('createVeh Pg, 59, dispatched', values);
     }};
 }
 

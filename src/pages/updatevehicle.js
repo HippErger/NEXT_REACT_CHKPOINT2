@@ -4,7 +4,7 @@ import withRedux from 'next-redux-wrapper';
 import PropTypes from 'prop-types';
 import VehicleForm from '../components/VehicleForm';
 import Header from '../components/Header';
-// import anaction from '../actions';
+import {updateThisVehicle} from '../actions';
 
 class updateVehicle extends Component {
   render() {
@@ -28,8 +28,9 @@ class updateVehicle extends Component {
 function mapDispatchToProps(dispatch) {
   return {
     submitUpdate: values => {
-      // Make and action to send the values to: updateThisVehicle
+      // Make an action to send the values to: updateThisVehicle
       console.log('submitUpdate was clicked', values);
+      dispatch(updateThisVehicle(values));
     }
   };
 }
