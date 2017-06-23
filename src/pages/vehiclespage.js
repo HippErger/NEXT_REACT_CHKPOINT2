@@ -56,7 +56,14 @@ class vehiclesPage extends Component {
         <h5>We&apos;re here</h5>
         <table>
           <tbody>
-              {instances}
+            <tr>
+              <td><b>Year</b></td>
+              &nbsp; &nbsp;
+              <td><b>Make</b></td>
+              &nbsp; &nbsp;
+              <td><b>Model</b></td>
+            </tr>
+            {instances}
           </tbody>
         </table>
       </div>

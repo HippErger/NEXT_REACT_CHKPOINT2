@@ -40,7 +40,7 @@ const VehicleController = {
   update: (request, response, next) => {
     const itemBody = request.body;
 
-    vehicleModel.findById(request.params._id).exec()
+    vehicleModel.findById(request.params.id).exec()
       .then(data => {
         data.image = itemBody.image || data.image;
         data.year = itemBody.year || data.year;
