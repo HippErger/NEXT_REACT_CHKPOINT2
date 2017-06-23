@@ -39,7 +39,9 @@ class vehiclesPage extends Component {
               Delete
             </button>
             &nbsp; &nbsp;
-            <Link>
+            <Link
+              href={{pathname: '/updatevehicle',
+                query: {_id: instance.id}}}>
               <button>
                 Edit Details
               </button>
