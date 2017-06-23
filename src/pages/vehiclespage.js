@@ -41,7 +41,7 @@ class vehiclesPage extends Component {
             &nbsp; &nbsp;
             <Link
               href={{pathname: '/updatevehicle',
-                query: {_id: instance.id}}}>
+                query: {_id: instance._id}}}>
               <button>
                 Edit Details
               </button>
