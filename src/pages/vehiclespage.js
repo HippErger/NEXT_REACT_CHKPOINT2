@@ -19,10 +19,6 @@ class vehiclesPage extends Component {
     /* eslint-disable no-unused-vars */
     const {items, loading, error} = this.props;
 
-    // const urlString = 'https://www.google.com/search?q=2008+toyota+prius&tbm=isch&imgil=GelOqbXv6MoLZM%253A%253B3ZQv7-I1qAu5RM%253Bhttps%25253A%25252F%25252Fwww.edmunds.com%25252Ftoyota%25252Fprius%25252F2008%25252F&source=iu&pf=m&fir=GelOqbXv6MoLZM%253A%252C3ZQv7-I1qAu5RM%252C_&usg=__1jjnWKamS2tG2cszNvOSt1h8GYg%3D&biw=1920&bih=939&ved=0ahUKEwjuu_7q7tLUAhVL4yYKHds9BOYQyjcIkgE&ei=mHVMWe6PJMvGmwHb-5CwDg#imgrc=GelOqbXv6MoLZM:';
-    //
-    // console.log(urlString.length);
-
     const instances = items.map( instance => {
       return (
           <tr key={instance._id}>
@@ -43,9 +39,11 @@ class vehiclesPage extends Component {
               Delete
             </button>
             &nbsp; &nbsp;
-            <button>
-              Edit
-            </button> &nbsp; &nbsp;
+            <Link>
+              <button>
+                Edit Details
+              </button>
+            </Link>
           </tr>
       );
     });
