@@ -17,7 +17,7 @@ class updateVehicle extends Component {
         {id}
         <VehicleForm
           onSubmit={values => {
-            this.props.submitUpdate(values);
+            this.props.submitUpdate(values, id);
           }} />
       </div>
     );
@@ -27,10 +27,10 @@ class updateVehicle extends Component {
 /* eslint-disable no-unused-vars */
 function mapDispatchToProps(dispatch) {
   return {
-    submitUpdate: values => {
+    submitUpdate: (values, id) => {
       // Make an action to send the values to: updateThisVehicle
       console.log('submitUpdate was clicked', values);
-      dispatch(updateThisVehicle(values));
+      dispatch(updateThisVehicle(values, id));
     }
   };
 }

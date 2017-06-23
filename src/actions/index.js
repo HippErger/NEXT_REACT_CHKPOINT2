@@ -8,8 +8,8 @@ export const UPDATE_THIS_VEHICLE = 'UPDATE_THIS_VEHICLE';
 export const VEHICLE_UPDATE_SUCCESS = 'VEHICLE_UPDATE_SUCCESS';
 export const VEHICLE_UPDATE_FAILURE = 'VEHICLE_UPDATE_FAILURE';
 
-export function updateThisVehicle(values) {
-  return console.log('from actionsjs, 12', values);
+export function updateThisVehicle(values, itemID) {
+  return console.log('from actionsjs, 12', values, itemID);
 
   // dispatch => {
   //   dispatch({
