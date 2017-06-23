@@ -9,7 +9,7 @@ function IndexPage() {
     <div>
       <Header />
       <h1>
-        Hello World
+        Welcome to: Car Browser
       </h1>
     </div>
   );

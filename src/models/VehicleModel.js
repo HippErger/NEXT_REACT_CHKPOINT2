@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const vehicleModel = mongoose.Schema({
   city: {
     type: String,
-    maxlength: [ 25, 'Maximum character limit reached. Please try again.' ],
+    maxlength: [ 2, 'Maximum character limit reached. Please try again.' ],
     required: false
   },
   fuel: {
@@ -13,7 +13,7 @@ const vehicleModel = mongoose.Schema({
   },
   image: {
     type: String,
-    maxlength: [ 25, 'Maximum character limit reached. Please try again.' ],
+    maxlength: [ 1000, 'Maximum character limit reached. Please try again.' ],
     required: false
   },
   km: {
@@ -43,15 +43,14 @@ const vehicleModel = mongoose.Schema({
   },
   price: {
     type: String,
-    maxlength: [ 25, 'Maximum character limit reached. Please try again.' ],
+    maxlength: [ 7, 'Maximum character limit reached. Please try again.' ],
     required: false
   },
   year: {
     type: String,
-    maxlength: [ 25, 'Maximum character limit reached. Please try again.' ],
+    maxlength: [ 4, 'Maximum character limit reached. Please try again.' ],
     required: true
   },
 });
-
 
 export default mongoose.model('Vehicle', vehicleModel);

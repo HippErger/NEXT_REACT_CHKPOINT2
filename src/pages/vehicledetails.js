@@ -12,25 +12,14 @@ class VehicleDetails extends Component {
 
   VEHICLE_ID = this.props.url.query._id;
 
-  // A lifecyle hook that allows us to trigger another function when it mounts
   componentDidMount() {
-    // prefer the other name better
-    // this.props.onMount();
     this.props.getVehicleDetails(this.VEHICLE_ID);
   }
 
   // class Components always have to have a render function
   render() {
-    // @TODO in here we need to access state.currentVehicle.whatever-we-want
     /* eslint-disable no-unused-vars */
     const {item, loading, error} = this.props;
-
-    // const specifics = {...item}
-    // const breakdown = item.map((spec, index) => {
-    //   return (
-    //     <li key={spec}>{spec}</li>
-    //   );
-    // });
 
     return (
       <div>
@@ -42,14 +31,13 @@ class VehicleDetails extends Component {
           <li>{item.miles}</li>
           <li>{item.price}</li>
           <li>{item.city}</li>
-        </ul>  
+        </ul>
       </div>
     );
   }
 }
 
 VehicleDetails.propTypes = {
-  // onMount: PropTypes.func.isRequired,
   getVehicleDetails: PropTypes.func.isRequired,
   url: PropTypes.object.isRequired,
   item: PropTypes.object.isRequired,
@@ -74,8 +62,8 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return {
     item: state.currentVehicle.item,
-    // loading: state.curentVehicle.loading,
-    // error: state.currentVehicle.error,
+    loading: state.currentVehicle.loading,
+    error: state.currentVehicle.error,
   };
 }
 

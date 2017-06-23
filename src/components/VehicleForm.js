@@ -1,8 +1,6 @@
-
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-/* eslint-disable no-unused-vars*/
 class VehicleForm extends Component {
   constructor() {
     super();
@@ -88,7 +86,7 @@ class VehicleForm extends Component {
           <input
             type="text"
             name="price"
-            placeholder="price"
+            placeholder="price in USD"
             value={price}
             onChange={this.handleInputChange}
           />
@@ -96,7 +94,7 @@ class VehicleForm extends Component {
           <input
             type="text"
             name="km"
-            placeholder="km"
+            placeholder="odometer in km"
             value={km}
             onChange={this.handleInputChange}
           />
@@ -105,7 +103,7 @@ class VehicleForm extends Component {
           <input
             type="text"
             name="miles"
-            placeholder="miles"
+            placeholder="odometer in miles"
             value={miles}
             onChange={this.handleInputChange}
           />
@@ -113,7 +111,7 @@ class VehicleForm extends Component {
           <input
             type="text"
             name="fuel"
-            placeholder="fuel"
+            placeholder="fuel type"
             value={fuel}
             onChange={this.handleInputChange}
           />

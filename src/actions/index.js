@@ -1,5 +1,4 @@
 import 'isomorphic-fetch';
-// import 'whatwg-fetch';
 
 export const DELETE_THIS_ITEM = 'DELETE_THIS_ITEM';
 export const ITEM_TO_DELETE_FAILED = 'ITEM_TO_DELETE_FAILED';
@@ -37,6 +36,7 @@ function itemFailedtoDelete(message) {
 }
 
 /* ///////////////////////////////////////////////////////////////////////////
+                        Load One Vehicle Details
 /////////////////////////////////////////////////////////////////////////// */
 export const LOAD_ONE_VEHICLE = 'LOAD_ONE_VEHICLE';
 export const LOAD_ONE_VEHICLE_SUCCESS = 'LOAD_ONE_VEHICLE_SUCCESS';
@@ -49,7 +49,6 @@ export function loadOneVehicle(id) {
       type: LOAD_ONE_VEHICLE,
     });
 
-    // may have to put an _ after vehicles/? i.e: ?_id=593
     fetch('/api/vehicles/' + id)
       .then( result => {
         console.log('got a vehicle at actionjs, 55', result);
