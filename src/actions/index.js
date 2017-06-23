@@ -9,35 +9,34 @@ export const VEHICLE_UPDATE_SUCCESS = 'VEHICLE_UPDATE_SUCCESS';
 export const VEHICLE_UPDATE_FAILURE = 'VEHICLE_UPDATE_FAILURE';
 
 export function updateThisVehicle(values, itemID) {
-  return console.log('from actionsjs, 12', values, itemID);
+  return dispatch => {
+    dispatch({
+      type: UPDATE_THIS_VEHICLE
+    });
 
-  // dispatch => {
-  //   dispatch({
-  //     type: UPDATE_THIS_VEHICLE
-  //   });
-
-    // fetch('/api/vehicles', {
-    //   method: 'PUT',
-    //   headers: {'Content-Type': 'application/json'}
-    // })
-    // .then(() => dispatch(updateVehicleSuccess()))
-    // .then(() => dispatch(vehicleListLoad()))
-    // .catch(err => dispatch(updateVehicleFailure(err.message)));
-  // };
+    fetch('/api/vehicles/' + itemID, {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(values)
+    })
+    .then(data => dispatch(updateVehicleSuccess(data)))
+    .then(() => dispatch(vehicleListLoad()))
+    .catch(err => dispatch(updateVehicleFailure(err.message)));
+  };
 }
 
-// function updateVehicleSuccess() {
-//   return {
-//     type: VEHICLE_UPDATE_SUCCESS
-//   };
-// }
-//
-// function updateVehicleFailure(errorMessage) {
-//   return {
-//     type: VEHICLE_UPDATE_FAILURE,
-//     errorMessage
-//   };
-// }
+function updateVehicleSuccess() {
+  return {
+    type: VEHICLE_UPDATE_SUCCESS
+  };
+}
+
+function updateVehicleFailure(errorMessage) {
+  return {
+    type: VEHICLE_UPDATE_FAILURE,
+    errorMessage
+  };
+}
 
 /* ///////////////////////////////////////////////////////////////////////////
                           Delete Vehicle

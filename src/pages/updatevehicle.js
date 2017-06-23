@@ -28,8 +28,6 @@ class updateVehicle extends Component {
 function mapDispatchToProps(dispatch) {
   return {
     submitUpdate: (values, id) => {
-      // Make an action to send the values to: updateThisVehicle
-      console.log('submitUpdate was clicked', values);
       dispatch(updateThisVehicle(values, id));
     }
   };
@@ -37,7 +35,7 @@ function mapDispatchToProps(dispatch) {
 
 updateVehicle.propTypes = {
   submitUpdate: PropTypes.func.isRequired,
-  url: PropTypes.string,
+  url: PropTypes.object.isRequired,
   query: PropTypes.string,
   _id: PropTypes.string
 };
