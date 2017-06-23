@@ -36,39 +36,42 @@ function itemFailedtoDelete(message) {
   };
 }
 
+/* ///////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////// */
 export const LOAD_ONE_VEHICLE = 'LOAD_ONE_VEHICLE';
 export const LOAD_ONE_VEHICLE_SUCCESS = 'LOAD_ONE_VEHICLE_SUCCESS';
 export const LOAD_ONE_VEHICLE_FAILURE = 'LOAD_ONE_VEHICLE_FAILURE';
 
-export function loadOneVehicle() {
-  console.log('loadOneVehicle was called in actions');
+export function loadOneVehicle(id) {
+  console.log('loadOneVehicle was called in actions and this was recieved', id);
   return dispatch => {
     dispatch({
       type: LOAD_ONE_VEHICLE,
     });
 
-    // this is hard-coded dummy id to see if we can load the details
-    fetch('/api/vehicles/5931b7939985bb67ed8c7bfc')
+    // may have to put an _ after vehicles/? i.e: ?_id=593
+    fetch('/api/vehicles/' + id)
       .then( result => {
-        console.log('got a vehicle at actionjs, 17', result);
+        console.log('got a vehicle at actionjs, 55', result);
         return result.json();
       })
       .then( data => {
-        console.log('data was reveived at actionsjs, 21', data);
+        console.log('data was reveived at actionsjs, 59', data);
         dispatch(oneVehicleLoadSuccess(data));
       })
       .catch(err => {
-        console.log('there was an error at actionsjs, 25', err);
+        console.log('there was an error at actionsjs, 63', err);
         dispatch(oneVehicleLoadFailure(err.message));
       });
   };
 }
 
 // these are function to be called and return through dispatches asyncronously
-function oneVehicleLoadSuccess(recievedData) {
+function oneVehicleLoadSuccess(receivedData) {
+  console.log('from actionsjs, 71', receivedData);
   return {
     type: LOAD_ONE_VEHICLE_SUCCESS,
-    recievedData
+    receivedData
   };
 }
 
@@ -79,12 +82,15 @@ function oneVehicleLoadFailure(message) {
   };
 }
 
+/* ///////////////////////////////////////////////////////////////////////////
+                        Create New Vehicle
+/////////////////////////////////////////////////////////////////////////// */
+
 export const CREATE_VEHICLE = 'CREATE_VEHICLE';
 export const CREATE_VEHICLE_SUCCESS = 'CREATE_VEHICLE_SUCCESS';
 export const CREATE_VEHICLE_ERROR = 'CREATE_VEHICLE_ERROR';
 
 export function createNewVehicle(values) {
-  console.log('actionjs, 39,', values);
   return dispatch => {
 
     fetch('http://localhost:3001/api/vehicles', {
@@ -95,7 +101,6 @@ export function createNewVehicle(values) {
     .then(() => dispatch(vehicleListLoad()))
     .then(item => dispatch(createdVehicleSuccessfully(item)))
     .catch(err => {
-      console.log('Create Vehicle was a failure, actionsjs, 33', err);
       dispatch(createVehicleError(err));
     });
   };
@@ -118,6 +123,10 @@ function createdVehicleSuccessfully(item) {
   };
 }
 
+/* ///////////////////////////////////////////////////////////////////////////
+                          Load Vehicle List
+/////////////////////////////////////////////////////////////////////////// */
+
 export const VEHICLE_LIST_LOAD = 'VEHICLE_LIST_LOAD';
 export const VEHICLE_LIST_LOAD_SUCCESS = 'VEHICLE_LIST_LOAD_SUCCESS';
 export const VEHICLE_LIST_LOAD_ERROR = 'VEHICLE_LIST_LOAD_ERROR';
@@ -130,15 +139,12 @@ export function vehicleListLoad() {
 
     fetch('/api/vehicles')
       .then(result => {
-        console.log('Vehicle list did load', result);
         return result.json();
       })
       .then(data => {
-        console.log('result was wrung out in response.json into data', data);
         dispatch(vehicleListLoadSuccess(data));
       })
       .catch(err => {
-        console.log('Vehicle list didn\'t load', err);
         dispatch(vehicleListLoadFailure(err.message));
       });
   };

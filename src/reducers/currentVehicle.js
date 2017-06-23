@@ -7,11 +7,9 @@ import {
 } from '../actions';
 
 function loading(state = false, action) {
-  switch (action.typ) {
+  switch (action.type) {
     case LOAD_ONE_VEHICLE:
       return true;
-    // this is a trick. It passes through on _SUCCESS and returns state unless if
-    // the action.type is and _ERROR.
     case LOAD_ONE_VEHICLE_SUCCESS:
     case LOAD_ONE_VEHICLE_FAILURE:
       return false;
@@ -23,15 +21,16 @@ function error(state = null, action) {
   return state;
 }
 
-function item(state = [], action) {
+function item(state = {}, action) {
   switch (action.type) {
     case LOAD_ONE_VEHICLE_SUCCESS:
-      return action.recievedData;
+      return action.receivedData;
     case LOAD_ONE_VEHICLE_FAILURE:
-      return [];
+      return {};
   }
   return state;
 }
+
 
 const currentVehicle = combineReducers({
   loading,
