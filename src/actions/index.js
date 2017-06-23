@@ -1,5 +1,4 @@
 import 'isomorphic-fetch';
-
 export const DELETE_THIS_ITEM = 'DELETE_THIS_ITEM';
 export const ITEM_TO_DELETE_FAILED = 'ITEM_TO_DELETE_FAILED';
 export const ITEM_DELETED_SUCCESSFULLY = 'ITEM_DELETED_SUCCESSFULLY';
