@@ -200,3 +200,48 @@ Page.getInitialProps = async ({ req }) => {
 export default Page
 */
  -->
+
+##NOTES ON LAST DAY OF CLASS
+*Skills to learn
+  *Keep learning as fast as you can
+  *Take a job to learn more not to make more money
+  *After 3 years of work you probably have enough money so just go for another job to learn more
+  *If you stay longer you can just start a side project or work as a contractor for 9 months a years
+  *Work with good people to learn more from
+  *Find a job the pays you to code!!
+  *Add Ivo on LinkedIn Ivo Mießner
+
+*Technologies
+  *Focus on fundamentals of programming
+  *Learn software design patterns
+  *The gang of 5 -
+  *Design Pattern, Element of Reusable object-oriented software
+    what is an abstract, ... ... ... ..
+  * Pramp, find code fighting apps or websites
+  * spend 70% writing code and 30% on researching
+  * Look for small agencies that just build websites
+  * Learn another programming language - python, php, ruby,
+  * Machine learning - python
+  * Ruby - learn to build an apps
+  * Learn a strongly typed language - not like Javascript
+    * define what type the variable will be before you assign it
+      *Golang
+      *Elm - i good way to get used to an object-oriented language, elegant, really friendly debugger
+      *Model-view-update
+  *Type script - adds strong typing to your Javascript,
+  *or Check out Facebook's Flow for this
+  *Learn about different software architectures
+    *STACKSHARE - This is where FB, AirBNB share all of their frameworks
+  *Learn Fundamentals of Architecture
+
+  *____________ a person explain functional programming really well
+  *Redux and all of its decorators will make more sense
+
+  *Take on low pay or free websites with comfortable deadlines that I also kinda know how to do but will learn more to figure out the rest of the problems.
+
+in the interview
+  *Ask employers how they allow you learn more as a programmer
+  *You don't need to know how to do everything, you just need to know how to figure it out
+  *They want to learn how you learn to solve problems
+  *Tell them your approach
+  *Find the structured way of solving problems
